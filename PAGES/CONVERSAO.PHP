@@ -59,6 +59,9 @@ function validarEntrada($valor, $moeda) {
 function exibirMensagem($mensagem) {
     echo "<div class='resultado'>$mensagem</div>";
 }
+function converterParaDolar($valor, $cotacaoDolar = 5.2) {
+    return $valor / $cotacaoDolar;
+}
 
      
 }
