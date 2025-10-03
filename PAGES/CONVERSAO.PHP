@@ -64,8 +64,9 @@ function converterParaDolar($valor, $cotacaoDolar = 5.2) {
 }
 function converterParaEuro($valor, $cotacaoEuro = 5.8) {
     return $valor / $cotacaoEuro;       
-    
 
+function converterParaIene($valor, $cotacaoIene = 0.038) {
+    return $valor / $cotacaoIene;   
      
 }
 ?>
