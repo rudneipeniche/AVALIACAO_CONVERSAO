@@ -26,8 +26,8 @@ Importante
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $valor = $_GET['valor'];
     $moeda = $_GET['moeda'];
-
-    // Validação simples
+}
+    
     if (!is_numeric($valor) || $valor <= 0) {
         $mensagem = "Por favor, insira um valor válido em Reais.";
     } elseif (!in_array($moeda, ['dolar', 'euro', 'iene'])) {
@@ -54,7 +54,7 @@ function validarEntrada($valor, $moeda) {
     if (!in_array($moeda, $moedasValidas)) {
         return "Escolha uma moeda válida para conversão.";
     }
-    return true; // tudo certo
+    return true;
 }
 function exibirMensagem($mensagem) {
     echo "<div class='resultado'>$mensagem</div>";
@@ -62,13 +62,30 @@ function exibirMensagem($mensagem) {
 function converterParaDolar($valor, $cotacaoDolar = 5.2) {
     return $valor / $cotacaoDolar;
 }
-function converterParaEuro($valor, $cotacaoEuro = 5.8) {
-    return $valor / $cotacaoEuro;       
+function converterParaEuro($valor, $cotacaoEuro = 5.8) 
+  {  return $valor / $cotacaoEuro;       
+  }
 
 function converterParaIene($valor, $cotacaoIene = 0.038) {
     return $valor / $cotacaoIene;   
-     
 }
+
+    function pegarCotacao($moeda) {
+   
+
+    $url = "https://api.exchangerate.host/latest?base=BRL&symbols=$moeda";
+
+      $json = file_get_contents($url);
+    
+    $dados = json_decode($json, true);
+   
+    if (isset($dados['rates'][$moeda])) {
+        return $dados['rates'][$moeda];
+    } else {
+        return false; // Retorna false em caso de erro
+    }
+}
+    
 ?>
 
 <!DOCTYPE html>
