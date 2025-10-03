@@ -62,6 +62,9 @@ function exibirMensagem($mensagem) {
 function converterParaDolar($valor, $cotacaoDolar = 5.2) {
     return $valor / $cotacaoDolar;
 }
+function converterParaEuro($valor, $cotacaoEuro = 5.8) {
+    return $valor / $cotacaoEuro;       
+    
 
      
 }
