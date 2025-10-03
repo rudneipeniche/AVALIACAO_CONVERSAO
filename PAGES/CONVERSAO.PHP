@@ -56,6 +56,9 @@ function validarEntrada($valor, $moeda) {
     }
     return true; // tudo certo
 }
+function exibirMensagem($mensagem) {
+    echo "<div class='resultado'>$mensagem</div>";
+}
 
      
 }
