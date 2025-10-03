@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor de Moedas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+            max-width: 400px;
+            margin: auto;
+        }
+        h2 {
+            text-align: center;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Conversor de Moedas</h2>
+    <form action="./PAGES/CONVERSAO.PHP" method="GET">
+        <label for="valor">Valor em Reais (R$):</label>
+        <input type="text" id="valor" name="valor" placeholder="Ex: 100" required>
+
+        <label for="moeda">Converter para:</label>
+        <select id="moeda" name="moeda" required>
+            <option value="">Selecione</option>
+            <option value="dolar">Dólar (USD)</option>
+            <option value="euro">Euro (EUR)</option>
+            <option value="iene">Iene Japonês (JPY)</option>
+        </select>
+
+        <button type="submit">Converter</button>
+    </form>
+</div>
+
+</body>
+</html>
