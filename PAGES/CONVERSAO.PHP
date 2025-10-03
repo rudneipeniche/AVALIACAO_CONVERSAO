@@ -44,7 +44,20 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $resultado = $valor / 0.038;
             $mensagem = "R$ $valor equivalem a ¥ " . number_format($resultado, 2);
         }
+     }
+
+function validarEntrada($valor, $moeda) {
+    $moedasValidas = ['dolar', 'euro', 'iene']; // você pode adicionar mais
+    if (!is_numeric($valor) || $valor <= 0) {
+        return "Por favor, insira um valor válido em Reais.";
     }
+    if (!in_array($moeda, $moedasValidas)) {
+        return "Escolha uma moeda válida para conversão.";
+    }
+    return true; // tudo certo
+}
+
+     
 }
 ?>
 
